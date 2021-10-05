@@ -13,16 +13,15 @@ const server = http.createServer((req, res) => {
 
 	// The req has a url property, which we can use to send responses to custom endpoints.
 	let url = req.url;
-    console.log(url);
 
-    if (url && url.trim() === '/assets/Node_logo.png') {
+    if (url && url.trim() === '/Node_logo.png') {
 		res.writeHead(200, { 'content-type': 'image/png' });
-		const image = fs.readFileSync('../assets/Node_logo.png');
+		const image = fs.readFileSync('./public/Node_logo.png');
 		res.write(image);
         res.end();
 	} else if (url && url.trim() === '/styles.css') {
 		res.writeHead(200, { 'content-type': 'text/css' });
-		const css = fs.readFileSync('../assets/styles.css');
+		const css = fs.readFileSync('./public/styles.css');
 		res.write(css);
         res.end();
 	} else if (url && url.trim() !== '/') {
@@ -42,7 +41,7 @@ const server = http.createServer((req, res) => {
 		// It's quite simple in the sense that you have to construct the entire html response that you want to construct using write
 		// Let's read from the file and send the output back.
 		fs.Path;
-		const htmlResponse = fs.readFileSync('../assets/sampleResponse.html');
+		const htmlResponse = fs.readFileSync('./public/index.html');
 		res.write(htmlResponse);
 
 		// You can also chain end method like so.
