@@ -26,8 +26,8 @@ app.use(express.urlencoded({extended: false}));
 
 // set is a keyword used in express to change various internal settings. If you have to define a view engine on the server side, you have 
 // to set the view engine property in express. 
-// app.set('view engine', 'ejs'); // ejs is an 3rd party npm module
-app.set('view engine', 'hbs'); // hbs (handlebars) is a 3rd party npm module as well
+// app.set('view engine', 'hbs'); // hbs (handlebars) is a 3rd party npm module as well 
+app.set('view engine', 'ejs'); // ejs is an 3rd party npm module
 
 // We need to specify the public folder to the view engine for it to find our html files
 // the default is ./views
